@@ -10,3 +10,9 @@ if (NO_CONSOLE)
 else()
     add_executable(CbGame ${GAME_SOURCES} ${GAME_HEADERS})
 endif()
+
+#-------------------------------------------------------------------
+# Libraries
+#-------------------------------------------------------------------
+find_package(OpenGL REQUIRED)
+target_link_libraries(CbGame PRIVATE glfw OpenGL::GL)
